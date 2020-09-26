@@ -5,9 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIAT test</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    
+    <main class="container-box">
+        <header class="header" >
+            <div class="title-user"><span>Users: </span>5</div>
+            <div>
+                <button class="btn"><i class="fa fa-plus" aria-hidden="true"></i>  Add User</button>
+            </div>           
+        </header>
+
+        <section class="section-list">
+            <div class="list-user">
+                <div class="row header-list">
+                    <div>ID</div>
+                    <div>Name</div>
+                    <div></div>
+                </div>
+
+                <div class="row row-text">
+                    <div>01</div>
+                    <div>Maria Lopez</div>
+                    <div class="col-action"><button class="btn btn-edit"><i class="fa fa-pencil" aria-hidden="true"></i> </button></div>
+                </div>
+                
+
+                <div class="row row-text">
+                    <div>01</div>
+                    <div>Maria Lopez</div>
+                    <div class="col-action"><button class="btn btn-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button></div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
