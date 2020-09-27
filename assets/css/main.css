@@ -90,6 +90,91 @@ img {
   padding: 10px 8px 10px 12px;
   text-align: center;
 }
-.btn-edit:hover {
+.btn-delete {
+  background-color: #73323f;
+}
+.btn-edit:hover,
+.btn-delete:hover {
   background-color: #c0a07d;
+}
+.popup {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  display: grid;
+  visibility: hidden;
+  opacity: 0;
+}
+.box {
+  background-color: #fff;
+  padding: 50px;
+  position: relative;
+}
+.popup-active {
+  visibility: visible;
+  opacity: 1;
+}
+.btn-close {
+  background: none;
+  border: none;
+  color: #565656;
+  font-size: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.form-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px 20px;
+}
+.form-label {
+  display: block;
+  color: #565656;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.form-group input {
+  color: #565656;
+}
+.input-text {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 20px;
+  border: 1px solid #e4dad5;
+  padding: 8px 10px;
+}
+.input-check {
+  display: grid;
+}
+.input-radio {
+  display: flex;
+}
+.input-check,
+.input-radio {
+  color: #565656;
+}
+.content-btn-update {
+  justify-self: end;
+}
+.content-btn-add {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
+}
+@media only screen and (max-width: 580px) {
+  .form-col {
+    grid-gap: 20px;
+  }
+  .box {
+    padding: 30px 20px;
+  }
 }
