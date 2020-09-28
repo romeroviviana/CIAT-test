@@ -13,7 +13,7 @@
 <body>
     <main class="container-box">
         <header class="header" >
-            <div class="title-user"><span>Users: </span>5</div>
+            <div class="title-user"><span>Users </span></div>
             <div>
                 <button class="btn" id="btn-add"><i class="fa fa-plus" aria-hidden="true"></i>  Add User</button>
             </div>           
@@ -26,80 +26,54 @@
                     <div>Name</div>
                     <div></div>
                 </div>
-
-                <div class="row row-text">
-                    <div>01</div>
-                    <div>Maria Lopez</div>
-                    <div class="col-action"><button class="btn btn-edit"><i class="fa fa-pencil" aria-hidden="true"></i> </button></div>
-                </div>                
-
-                <div class="row row-text">
-                    <div>02</div>
-                    <div>Ernesto Diaz</div>
-                    <div class="col-action"><button class="btn btn-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button></div>
-                </div>
-
-                <div class="row row-text">
-                    <div>03</div>
-                    <div>Carlos Garcia</div>
-                    <div class="col-action"><button class="btn btn-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button></div>
-                </div>
-
-                <div class="row row-text">
-                    <div>04</div>
-                    <div>Elena Perez</div>
-                    <div class="col-action"><button class="btn btn-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button></div>
-                </div>
-
-                <div class="row row-text">
-                    <div>05</div>
-                    <div>Daniel Montes</div>
-                    <div class="col-action"><button class="btn btn-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button></div>
-                </div>
+            </div>
+            <div class="list-user" id="list-user">                
 
             </div>
         </section>
 
         <section class="popup" id="popup-edit">
             <div class="box">
+                <div id="test"></div>
                 <button class="btn-close-edit btn-close" id="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
-                <form action="" class="form-col">
+                <form method="POST" id="form-edit" class="form-col">
+                    <input type="hidden" name="id-user" id="id-user" value="">
                     <div class="form-group">
                         <label class="form-label">First Name</label>
-                        <input type="text" name="first-name" id="first-name" class="input-text">
+                        <input type="text" name="first-name" id="first-name" class="input-text" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Last Name</label>
-                        <input type="text" name="last-name" id="last-name" class="input-text">
+                        <input type="text" name="last-name" id="last-name" class="input-text" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="email" name="email" id="email" class="input-text">
+                        <input type="email" name="email" id="email" class="input-text" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Username</label>
-                        <input type="text" name="username" id="username" class="input-text">
+                        <input type="text" name="username" id="username" class="input-text" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">User Role</label>
                         <div class="input-check">
                             <div>
-                                <input type="checkbox" name="role" id="role-manager" value="Manager">
-                                <label for="role-manager">Manager</label>
+                                <input type="radio" name="role-update" id="Manager" value="Manager" checked>
+                                <label for="Manager">Manager</label>
                             </div>
 
                             <div>
-                                <input type="checkbox" name="role" id="role-member" value="Member">
-                                <label for="role-member">Member</label>
+                                <input type="radio" name="role-update" id="Member" value="Member">
+                                <label for="Member">Member</label>
                             </div>
 
                             <div>
-                                <input type="checkbox" name="role" id="role-contributor" value="Contributor">
-                                <label for="role-contributor">Contributor</label>
+                                <input type="radio" name="role-update" id="Contributor" value="Contributor">
+                                <label for="Contributor">Contributor</label>
                             </div>
     
                         </div>
@@ -111,68 +85,69 @@
 
                         <div class="input-radio">
                             <div>
-                                <input type="radio" name="active" id="active-yes" value="yes">
-                                <label for="active-yes">Yes</label>
+                                <input type="radio" name="active" id="yes" value="yes" checked>
+                                <label for="yes">Yes</label>
                             </div>
                             
                             <div>
-                                <input type="radio" name="active" id="active-no" value="no">
-                                <label for="active-no">No</label>
+                                <input type="radio" name="active" id="no" value="no">
+                                <label for="no">No</label>
                             </div>
                         </div>
 
                     </div>
 
                     <div class="content-btn-update">
-                        <button class="btn btn-update"><i class="fa fa-refresh" aria-hidden="true"></i> Update</button>
+                        <button type="button" class="btn btn-update" id="btn-update"><i class="fa fa-refresh" aria-hidden="true"></i> Update</button>
                     </div>
                     <div>
-                        <button class="btn btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                        <button type="button" class="btn btn-delete" id="btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                     </div>
                 </form>
+                <div id="res-update" class="res"></div>
             </div>
         </section>
 
         <section class="popup" id="popup-add">
-            <div class="box">
+            <div class="box">                
                 <button class="btn-close-add btn-close" id="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
-                <form action="" class="form-col">
+                <form method="POST" id="form-add" class="form-col">
                     <div class="form-group">
                         <label class="form-label">First Name</label>
-                        <input type="text" name="first-name" id="first-name" class="input-text">
+                        <input type="text" name="first-name" class="input-text" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Last Name</label>
-                        <input type="text" name="last-name" id="last-name" class="input-text">
+                        <input type="text" name="last-name" class="input-text" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="email" name="email" id="email" class="input-text">
+                        <input type="email" name="email" class="input-text" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Username</label>
-                        <input type="text" name="username" id="username" class="input-text">
+                        <input type="text" name="username" class="input-text" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">User Role</label>
                         <div class="input-check">
                             <div>
-                                <input type="checkbox" name="role" id="role-manager" value="Manager">
-                                <label for="role-manager">Manager</label>
+                                <input type="radio" name="role" id="role-manager-add" value="Manager" checked>
+                                <label for="role-manager-add">Manager</label>
                             </div>
 
                             <div>
-                                <input type="checkbox" name="role" id="role-member" value="Member">
-                                <label for="role-member">Member</label>
+                                <input type="radio" name="role" id="role-member-add" value="Member">
+                                <label for="role-member-add">Member</label>
                             </div>
 
                             <div>
-                                <input type="checkbox" name="role" id="role-contributor" value="Contributor">
-                                <label for="role-contributor">Contributor</label>
+                                <input type="radio" name="role" id="role-contributor-add" value="Contributor">
+                                <label for="role-contributor-add">Contributor</label>
                             </div>
     
                         </div>
@@ -184,27 +159,31 @@
 
                         <div class="input-radio">
                             <div>
-                                <input type="radio" name="active" id="active-yes" value="yes">
-                                <label for="active-yes">Yes</label>
+                                <input type="radio" name="active" id="active-yes-add" value="yes" checked>
+                                <label for="active-yes-add">Yes</label>
                             </div>
                             
                             <div>
-                                <input type="radio" name="active" id="active-no" value="no">
-                                <label for="active-no">No</label>
+                                <input type="radio" name="active" id="active-no-add" value="no">
+                                <label for="active-no-add">No</label>
                             </div>
                         </div>
 
                     </div>
 
                     <div class="content-btn-add">
-                        <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Accept</button>
+                        <button type="button" class="btn" id="btn-add-user"><i class="fa fa-check" aria-hidden="true"></i> Accept</button>
                     </div>                    
                 </form>
+                <div id="res-add" class="res"></div>
             </div>
         </section>
     </main>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+
+   
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
