@@ -11,6 +11,6 @@ Antes de comenzadr debes:
 2- Importar la base de datos en un servidor con soporte de de Php y MySQLi.
 3- Cambiar los datos de conexión a la base de datos, se debe hacer en el archivo "connection.php" que se encuentra en la raiz.
 
-#Empezar
+# Empezar
 
 4- Ingresa al archivo "index.html" y comienza a probarlo.
