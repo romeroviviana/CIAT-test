@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","ciat");
+include 'connection.php';
 
 $select = mysqli_query($con, "select * from users");
 

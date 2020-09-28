@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","ciat");
+include 'connection.php';
 
 $id_user = $_POST['id-user'];
 $first_name = $_POST['first-name'];

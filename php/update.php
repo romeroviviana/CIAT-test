@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","ciat");
+include 'connection.php';
 
 $id = $_POST['id'];
 

@@ -5,7 +5,7 @@ $(function(){
 
 function getUsers(){
     $.ajax({
-        url: 'data.php',
+        url: 'php/data.php',
         type: 'POST',
         success: function(res){
             var js = JSON.parse(res);
@@ -32,7 +32,7 @@ $('#btn-add-user').click(function(){
     });
     if(!req){
         $.ajax({
-            url: 'add.php',
+            url: 'php/add.php',
             type: 'POST',
             data: $('#form-add').serialize(),
             success: function(res){            
@@ -51,7 +51,7 @@ function updateUser(id){
     showPopup(popupEdit)
 
     $.ajax({
-        url: 'update.php',
+        url: 'php/update.php',
         type: 'POST',
         data: "id="+id,
         success: function(res){
@@ -84,7 +84,7 @@ $('#btn-update').click(function(){
     });
     if(!req){
         $.ajax({
-            url: 'update-user.php',
+            url: 'php/update-user.php',
             type: 'POST',
             data: $('#form-edit').serialize(),
             success: function(res){            
@@ -102,7 +102,7 @@ $('#btn-update').click(function(){
 // delete user
 $('#btn-delete').click(function(){
     $.ajax({
-        url: 'delete.php',
+        url: 'php/delete.php',
         type: 'POST',
         data: $('#form-edit').serialize(),
         success: function(res){            
